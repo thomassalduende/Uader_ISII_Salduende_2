@@ -153,11 +153,13 @@ if __name__ == "__main__":
     """
     The client code can work with any concrete factory class.
     """
-    print("Client: Testing client code with the first factory type:")
+    #print("Client: Testing client code with the first factory type: ")
+    print ("Cliente: Prueba de código de cliente con el primer tipo de fábrica:")
     client_code(ConcreteFactory1())
 
     print("\n")
 
-    print("Client: Testing the same client code with the second factory type:")
+    #print("Cliente: probando el mismo código de cliente con el segundo tipo de fábrica:")
+    print("")
     client_code(ConcreteFactory2())
 

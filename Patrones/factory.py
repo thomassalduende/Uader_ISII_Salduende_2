@@ -94,7 +94,7 @@ def client_code(creator: Creator) -> None:
     its base interface. As long as the client keeps working with the creator via
     the base interface, you can pass it any creator's subclass.
     """
-
+    
     print(f"Client: I'm not aware of the creator's class, but it still works.\n"
           f"{creator.some_operation()}", end="")
 
@@ -102,9 +102,11 @@ def client_code(creator: Creator) -> None:
 if __name__ == "__main__":
 
     print("\n\n")
-    print("App: Launched with the ConcreteCreator1.")
+    print("")
+    #print("Aplicación: lanzada con ConcreteCreator1.")
     client_code(ConcreteCreator1())
     print("\n")
 
-    print("App: Launched with the ConcreteCreator2.")
+    #print("App: Launched with the ConcreteCreator2.")
+    print("Aplicación: lanzada con ConcreteCreator2.")
     client_code(ConcreteCreator2())
