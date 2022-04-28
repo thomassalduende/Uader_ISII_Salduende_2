@@ -70,12 +70,12 @@ Concrete Products are created by corresponding Concrete Factories.
 
 class ConcreteProductA1(AbstractProductA):
     def useful_function_a(self) -> str:
-        return "The result of the product A1."
+        return "El resultado del producto A1."
 
 
 class ConcreteProductA2(AbstractProductA):
     def useful_function_a(self) -> str:
-        return "The result of the product A2."
+        return "El resultado del producto A2."
 
 
 class AbstractProductB(ABC):
@@ -109,7 +109,7 @@ Concrete Products are created by corresponding Concrete Factories.
 
 class ConcreteProductB1(AbstractProductB):
     def useful_function_b(self) -> str:
-        return "The result of the product B1."
+        return "El resultado del producto B1."
 
     """
     The variant, Product B1, is only able to work correctly with the variant,
@@ -119,12 +119,12 @@ class ConcreteProductB1(AbstractProductB):
 
     def another_useful_function_b(self, collaborator: AbstractProductA) -> str:
         result = collaborator.useful_function_a()
-        return f"The result of the B1 collaborating with the ({result})"
+        return f"El resultado de B1 colaborando con el ({result})"
 
 
 class ConcreteProductB2(AbstractProductB):
     def useful_function_b(self) -> str:
-        return "The result of the product B2."
+        return "El resultado del producto B2."
 
     def another_useful_function_b(self, collaborator: AbstractProductA):
         """
@@ -133,7 +133,7 @@ class ConcreteProductB2(AbstractProductB):
         AbstractProductA as an argument.
         """
         result = collaborator.useful_function_a()
-        return f"The result of the B2 collaborating with the ({result})"
+        return f"El resultado de  B2 colaborando con el ({result})"
 
 
 def client_code(factory: AbstractFactory) -> None:

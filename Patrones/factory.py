@@ -35,7 +35,7 @@ class Creator(ABC):
         product = self.factory_method()
 
         # Now, use the product.
-        result = f"Creator: The same creator's code has just worked with {product.operation()}\n"
+        result = f"Creador: El mismo código del creador acaba de trabajar con {product.operation()}\n"
 
         return result
 
@@ -80,12 +80,12 @@ Concrete Products provide various implementations of the Product interface.
 
 class ConcreteProduct1(Product):
     def operation(self) -> str:
-        return "{Result of the ConcreteProduct1}"
+        return "{Resultado del ConcreteProduct1}"
 
 
 class ConcreteProduct2(Product):
     def operation(self) -> str:
-        return "{Result of the ConcreteProduct2}"
+        return "{Resultado del ConcreteProduct2}"
 
 
 def client_code(creator: Creator) -> None:
@@ -95,7 +95,7 @@ def client_code(creator: Creator) -> None:
     the base interface, you can pass it any creator's subclass.
     """
     
-    print(f"Client: I'm not aware of the creator's class, but it still works.\n"
+    print(f"Cliente: No tengo conocimiento del creador. class, pero todavía funciona.\n"
           f"{creator.some_operation()}", end="")
 
 
