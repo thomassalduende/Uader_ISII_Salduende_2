@@ -33,10 +33,10 @@ class Facade:
         """
 
         results = []
-        results.append("Facade initializes subsystems:")
+        results.append("Fachada inicializa subsistemas:")
         results.append(self._subsystem1.operation1())
         results.append(self._subsystem2.operation1())
-        results.append("Facade orders subsystems to perform the action:")
+        results.append("Fachada ordena subsistemas para realizar la acción:")
         results.append(self._subsystem1.operation_n())
         results.append(self._subsystem2.operation_z())
         return "\n".join(results)
@@ -50,12 +50,12 @@ class Subsystem1:
     """
 
     def operation1(self) -> str:
-        return "Subsystem1: Ready!"
+        return "Subsistema1: Listo!"
 
     # ...
 
     def operation_n(self) -> str:
-        return "Subsystem1: Go!"
+        return "Subsistema1: Vamos!"
 
 
 class Subsystem2:
@@ -64,12 +64,12 @@ class Subsystem2:
     """
 
     def operation1(self) -> str:
-        return "Subsystem2: Get ready!"
+        return "Subsistema2: Prepararse!"
 
     # ...
 
     def operation_z(self) -> str:
-        return "Subsystem2: Fire!"
+        return "Subsistema 2: Fuego!"
 
 
 def client_code(facade: Facade) -> None:

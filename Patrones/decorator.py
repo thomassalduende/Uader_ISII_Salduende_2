@@ -20,7 +20,7 @@ class ConcreteComponent(Component):
     """
 
     def operation(self) -> str:
-        return "ConcreteComponent"
+        return "Componente Concreto"
 
 
 class Decorator(Component):
@@ -83,7 +83,7 @@ def client_code(component: Component) -> None:
 
     # ...
 
-    print(f"RESULT: {component.operation()}", end="")
+    print(f"RESULTADO: {component.operation()}", end="")
 
     # ...
 
@@ -91,7 +91,7 @@ def client_code(component: Component) -> None:
 if __name__ == "__main__":
     # This way the client code can support both simple components...
     simple = ConcreteComponent()
-    print("Client: I've got a simple component:")
+    print("Cliente: Tengo un componente simple:")
     client_code(simple)
     print("\n")
 
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     # decorators as well.
     decorator1 = ConcreteDecoratorA(simple)
     decorator2 = ConcreteDecoratorB(decorator1)
-    print("Client: Now I've got a decorated component:")
+    print("Cliente: Ahora tengo un componente decorado:")
     client_code(decorator2)
 
     print("\n")

@@ -1,15 +1,9 @@
-#*--------------------------------------------------
-#* adapter.py
-#* excerpt from https://refactoring.guru/design-patterns/adapter/python/example
-#*--------------------------------------------------
-
 class Target:
     """
     The Target defines the domain-specific interface used by the client code.
     """
-
     def request(self) -> str:
-        return "Objetivo: el comportamiento del objetivo predeterminado."
+        return "Objetivo: el comportamiento correcto del objetivo predeterminado."
 
 
 class Adaptee:
@@ -20,7 +14,7 @@ class Adaptee:
     """
 
     def specific_request(self) -> str:
-        return ".eetpadA eht fo roivaheb laicepS"
+        return "IMDH :otreuP"
 
 
 class Adapter(Target, Adaptee):
@@ -30,7 +24,7 @@ class Adapter(Target, Adaptee):
     """
 
     def request(self) -> str:
-        return f"Adaptador: (TRANSLATED) {self.specific_request()[::-1]}"
+        return f"Adaptador:  {self.specific_request()[::-1]}"
 
 
 def client_code(target: "Target") -> None:
@@ -55,3 +49,4 @@ if __name__ == "__main__":
     print("Cliente: Pero puedo trabajar con él a través del Adaptador:")
     adapter = Adapter()
     client_code(adapter)
+

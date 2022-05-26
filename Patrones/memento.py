@@ -20,7 +20,7 @@ class Originator():
 
     def __init__(self, state: str) -> None:
         self._state = state
-        print(f"Originator: My initial state is: {self._state}")
+        print(f"Creador: Mi estado inicial es: {self._state}")
 
     def do_something(self) -> None:
         """
@@ -29,9 +29,9 @@ class Originator():
         of the business logic via the save() method.
         """
 
-        print("Originator: I'm doing something important.")
+        print("Originador: Estoy haciendo algo importante.")
         self._state = self._generate_random_string(30)
-        print(f"Originator: and my state has changed to: {self._state}")
+        print(f"Originador: y mi estado ha cambiado a: {self._state}")
 
     def _generate_random_string(self, length: int = 10) -> None:
         return "".join(sample(ascii_letters, length))
@@ -49,7 +49,7 @@ class Originator():
         """
 
         self._state = memento.get_state()
-        print(f"Originator: My state has changed to: {self._state}")
+        print(f"Originador: y mi estado ha cambiado a: {self._state}")
 
 
 class Memento(ABC):
@@ -102,7 +102,7 @@ class Caretaker():
         self._originator = originator
 
     def backup(self) -> None:
-        print("\nCaretaker: Saving Originator's state...")
+        print("\nCuidador: Guardando el estado del originador...")
         self._mementos.append(self._originator.save())
 
     def undo(self) -> None:
@@ -110,14 +110,14 @@ class Caretaker():
             return
 
         memento = self._mementos.pop()
-        print(f"Caretaker: Restoring state to: {memento.get_name()}")
+        print(f"Cuidador: Restaurando el estado a: {memento.get_name()}")
         try:
             self._originator.restore(memento)
         except Exception:
             self.undo()
 
     def show_history(self) -> None:
-        print("Caretaker: Here's the list of mementos:")
+        print("Cuidador: Aquí está la lista de recuerdos:")
         for memento in self._mementos:
             print(memento.get_name())
 
@@ -138,8 +138,8 @@ if __name__ == "__main__":
     print()
     caretaker.show_history()
 
-    print("\nClient: Now, let's rollback!\n")
+    print("\nCliente: Ahora, retrocedamos!\n")
     caretaker.undo()
 
-    print("\nClient: Once more!\n")
+    print("\nClient: Una vez más!\n")
     caretaker.undo()

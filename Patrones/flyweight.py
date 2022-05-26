@@ -21,7 +21,7 @@ class Flyweight():
     def operation(self, unique_state: str) -> None:
         s = json.dumps(self._shared_state)
         u = json.dumps(unique_state)
-        print(f"Flyweight: Displaying shared ({s}) and unique ({u}) state.", end="")
+        print(f"Flyweight: Mostrando compartida ({s}) y unico ({u}) estado.", end="")
 
 
 class FlyweightFactory():
@@ -53,16 +53,16 @@ class FlyweightFactory():
         key = self.get_key(shared_state)
 
         if not self._flyweights.get(key):
-            print("FlyweightFactory: Can't find a flyweight, creating new one.")
+            print("FlyweightFactory: No puedo encontrar un peso mosca, creando uno nuevo.")
             self._flyweights[key] = Flyweight(shared_state)
         else:
-            print("FlyweightFactory: Reusing existing flyweight.")
+            print("FlyweightFactory: Reutilización de peso mosca existente.")
 
         return self._flyweights[key]
 
     def list_flyweights(self) -> None:
         count = len(self._flyweights)
-        print(f"FlyweightFactory: I have {count} flyweights:")
+        print(f"FlyweightFactory: yo tengo {count} pesos mosca:")
         print("\n".join(map(str, self._flyweights.keys())), end="")
 
 
@@ -70,7 +70,7 @@ def add_car_to_police_database(
     factory: FlyweightFactory, plates: str, owner: str,
     brand: str, model: str, color: str
 ) -> None:
-    print("\n\nClient: Adding a car to database.")
+    print("\n\nCliente: Añadir un coche a la base de datos.")
     flyweight = factory.get_flyweight([brand, model, color])
     # The client code either stores or calculates extrinsic state and passes it
     # to the flyweight's methods.

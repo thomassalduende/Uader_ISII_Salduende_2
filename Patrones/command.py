@@ -46,7 +46,7 @@ class ComplexCommand(Command):
         Commands can delegate to any methods of a receiver.
         """
 
-        print("ComplexCommand: Complex stuff should be done by a receiver object", end="")
+        print("ComplexCommand: Las cosas complejas deben ser hechas por un objeto receptor", end="")
         self._receiver.do_something(self._a)
         self._receiver.do_something_else(self._b)
 
@@ -59,10 +59,10 @@ class Receiver:
     """
 
     def do_something(self, a: str) -> None:
-        print(f"\nReceiver: Working on ({a}.)", end="")
+        print(f"\nReceptor: Trabajando en ({a}.)", end="")
 
     def do_something_else(self, b: str) -> None:
-        print(f"\nReceiver: Also working on ({b}.)", end="")
+        print(f"\nReceptor: También trabajando en ({b}.)", end="")
 
 
 class Invoker:
@@ -95,9 +95,9 @@ class Invoker:
         if isinstance(self._on_start, Command):
             self._on_start.execute()
 
-        print("Invoker: ...doing something really important...")
+        print("Invocador: ...haciendo algo realmente importante...")
 
-        print("Invoker: Does anybody want something done after I finish?")
+        print("Invocador: Alguien quiere que se haga algo después de que termine?")
         if isinstance(self._on_finish, Command):
             self._on_finish.execute()
 
@@ -108,10 +108,10 @@ if __name__ == "__main__":
     """
 
     invoker = Invoker()
-    invoker.set_on_start(SimpleCommand("Say Hi!"))
+    invoker.set_on_start(SimpleCommand("¡Di hola!"))
     receiver = Receiver()
     invoker.set_on_finish(ComplexCommand(
-        receiver, "Send email", "Save report"))
+        receiver, "Enviar email", "Guardar reporte"))
 
     invoker.do_something_important()
     print("\n")

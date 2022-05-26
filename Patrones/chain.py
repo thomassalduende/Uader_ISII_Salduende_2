@@ -50,23 +50,23 @@ the chain.
 class MonkeyHandler(AbstractHandler):
     def handle(self, request: Any) -> str:
         if request == "Banana":
-            return f"Monkey: I'll eat the {request}"
+            return f"Mono: me comeré el {request}"
         else:
             return super().handle(request)
 
 
 class SquirrelHandler(AbstractHandler):
     def handle(self, request: Any) -> str:
-        if request == "Nut":
-            return f"Squirrel: I'll eat the {request}"
+        if request == "Nuez":
+            return f"Ardilla: me comeré la {request}"
         else:
             return super().handle(request)
 
 
 class DogHandler(AbstractHandler):
     def handle(self, request: Any) -> str:
-        if request == "MeatBall":
-            return f"Dog: I'll eat the {request}"
+        if request == "Albondiga":
+            return f"Perro: me comeré la  {request}"
         else:
             return super().handle(request)
 
@@ -77,13 +77,13 @@ def client_code(handler: Handler) -> None:
     cases, it is not even aware that the handler is part of a chain.
     """
 
-    for food in ["Nut", "Banana", "Cup of coffee"]:
-        print(f"\nClient: Who wants a {food}?")
+    for food in ["Nuez", "Banana", "Taza de cafe"]:
+        print(f"\nCliente: Quien quiere una {food}?")
         result = handler.handle(food)
         if result:
             print(f"  {result}", end="")
         else:
-            print(f"  {food} was left untouched.", end="")
+            print(f"  {food} se dejó intacta.", end="")
 
 
 if __name__ == "__main__":
@@ -95,10 +95,10 @@ if __name__ == "__main__":
 
     # The client should be able to send a request to any handler, not just the
     # first one in the chain.
-    print("Chain: Monkey > Squirrel > Dog\n")
+    print("Cadena: Mono > Ardilla > Perro\n")
     client_code(monkey)
     print("\n")
 
-    print("Subchain: Squirrel > Dog\n")
+    print("Subcadena: Ardilla > Perro\n")
     client_code(squirrel)
     print("\n")

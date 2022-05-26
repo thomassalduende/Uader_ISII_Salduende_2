@@ -70,13 +70,13 @@ class ConcreteBuilder1(Builder):
         return product
 
     def produce_part_a(self) -> None:
-        self._product.add("PartA1")
+        self._product.add("Parte A1")
 
     def produce_part_b(self) -> None:
-        self._product.add("PartB1")
+        self._product.add("Parte B1")
 
     def produce_part_c(self) -> None:
-        self._product.add("PartC1")
+        self._product.add("Parte C1")
 
 
 class Product1():

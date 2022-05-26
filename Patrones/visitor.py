@@ -110,11 +110,11 @@ def client_code(components: List[Component], visitor: Visitor) -> None:
 if __name__ == "__main__":
     components = [ConcreteComponentA(), ConcreteComponentB()]
 
-    print("The client code works with all visitors via the base Visitor interface:")
+    print("El código de cliente funciona con todos los visitantes a través de la interfaz de visitante base:")
     visitor1 = ConcreteVisitor1()
     client_code(components, visitor1)
 
-    print("It allows the same client code to work with different types of visitors:")
+    print("Permite que el mismo código de cliente funcione con diferentes tipos de visitantes:")
     visitor2 = ConcreteVisitor2()
     client_code(components, visitor2)
     print("\n")

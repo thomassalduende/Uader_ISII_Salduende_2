@@ -18,7 +18,7 @@ class Abstraction:
         self.implementation = implementation
 
     def operation(self) -> str:
-        return (f"Abstraction: Base operation with:\n"
+        return (f"Abstracción: Operación base con:\n"
                 f"{self.implementation.operation_implementation()}")
 
 
@@ -28,7 +28,7 @@ class ExtendedAbstraction(Abstraction):
     """
 
     def operation(self) -> str:
-        return (f"ExtendedAbstraction: Extended operation with:\n"
+        return (f"ExtendedAbstraction: Operación extendida con:\n"
                 f"{self.implementation.operation_implementation()}")
 
 
@@ -54,12 +54,12 @@ the Implementation interface using that platform's API.
 
 class ConcreteImplementationA(Implementation):
     def operation_implementation(self) -> str:
-        return "ConcreteImplementationA: Here's the result on the platform A."
+        return "ConcreteImplementationA: Aquí está el resultado en la plataforma A."
 
 
 class ConcreteImplementationB(Implementation):
     def operation_implementation(self) -> str:
-        return "ConcreteImplementationB: Here's the result on the platform B."
+        return "ConcreteImplementationB: Aquí está el resultado en la plataforma B."
 
 
 def client_code(abstraction: Abstraction) -> None:

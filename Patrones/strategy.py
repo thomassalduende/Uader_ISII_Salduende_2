@@ -42,7 +42,7 @@ class Context():
 
         # ...
 
-        print("Context: Sorting data using the strategy (not sure how it'll do it)")
+        print("Contexto: ordenar datos usando la estrategia (no estoy seguro de como lo hara)")
         result = self._strategy.do_algorithm(["a", "b", "c", "d", "e"])
         print(",".join(result))
 
@@ -85,11 +85,11 @@ if __name__ == "__main__":
     # to make the right choice.
 
     context = Context(ConcreteStrategyA())
-    print("Client: Strategy is set to normal sorting.")
+    print("Cliente: la estrategia está establecida en la clasificación normal.")
     context.do_some_business_logic()
     print()
 
-    print("Client: Strategy is set to reverse sorting.")
+    print("Cliente: la estrategia está configurada para invertir la clasificación.")
     context.strategy = ConcreteStrategyB()
     context.do_some_business_logic()
     print("\n")
